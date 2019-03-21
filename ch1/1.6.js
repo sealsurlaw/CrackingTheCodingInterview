@@ -1,5 +1,5 @@
 let str = "aaaabbbbbbbbcccccccaaaaa"
-str = null;
+
 console.log(str);
 
 let compressStr = (str) => {
