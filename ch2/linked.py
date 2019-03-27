@@ -48,6 +48,34 @@ class LinkedList:
         temp = self.head
         self.head = Node(value, temp)
         self.length += 1
+        return self.head
+
+    def popBack (self):
+        #Check if list is empty
+        if self.length == 0:
+            return None
+
+        #Remember last node
+        poppedNode = self.get(self.length - 1).value
+        #Decrement length
+        self.length -= 1
+        #Remove nextNode from last node
+        self.get(self.length - 1).nextNode = None
+        return poppedNode
+
+    def popFront (self):
+        #Check if list is empty
+        if self.length == 0:
+            return None
+
+        #Remember head value
+        poppedNode = self.head.value
+        #Set head to next node
+        self.head = self.head.nextNode
+        #Decrement length
+        self.length -= 1
+        return poppedNode
+
 
     def get (self, index):
         temp = self.head
@@ -59,15 +87,12 @@ class LinkedList:
 
     def printList (self):
         for i in range(self.length):
-            print(self.get(i))
+            print(self.get(i), end='')
 
-'''
-ll = LinkedList()
-ll.pushFront("cat")
-ll.pushFront("dog")
-ll.pushBack("bear")
-ll.pushBack("snake")
-ll.pushBack("fish")
+    @staticmethod
+    def getStringList (string):
+        ll = LinkedList()
+        for char in string:
+            ll.pushBack(char)
+        return ll
 
-ll.printList()
-'''
