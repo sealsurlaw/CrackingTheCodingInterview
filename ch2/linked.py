@@ -17,6 +17,16 @@ class LinkedList:
             self.head = ll.head
             self.length = ll.length
 
+    def getLength (self):
+        if self.head == None:
+            return 0
+        temp = self.head
+        length = 1
+        while temp.nextNode != None:
+            temp = temp.nextNode
+            length += 1
+        return length
+
     def pushBack (self, value):
         #Check if list is empty
         if self.head == None:
@@ -86,7 +96,7 @@ class LinkedList:
         return temp
 
     def printList (self):
-        for i in range(self.length):
+        for i in range(self.getLength()):
             print(self.get(i), end='')
 
     @staticmethod

@@ -8,8 +8,6 @@ def removeDuplicates (linked):
         if temp.value == temp.nextNode.value:
             #Remove reference to duplicate node
             temp.nextNode = temp.nextNode.nextNode
-            #TEST For easy printing
-            linked.length -= 1
             #Check current node with new next again
             continue
         #Otherwise go to next node
