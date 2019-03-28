@@ -95,6 +95,18 @@ class LinkedList:
             temp = temp.nextNode
         return temp
 
+    def toString (self):
+        string = ''
+        for i in range(self.getLength()):
+            string += str(self.get(i).value)
+        return string
+
+    def toList (self):
+        l = []
+        for i in range(self.getLength()):
+            l.append(self.get(i).value)
+        return l
+
     def printList (self):
         for i in range(self.getLength()):
             print(self.get(i).value, end='')
