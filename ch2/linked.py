@@ -97,7 +97,7 @@ class LinkedList:
 
     def printList (self):
         for i in range(self.getLength()):
-            print(self.get(i), end='')
+            print(self.get(i).value, end='')
 
     @staticmethod
     def getStringList (string):
@@ -105,4 +105,8 @@ class LinkedList:
         for char in string:
             ll.pushBack(char)
         return ll
+
+    @staticmethod
+    def getArrayList (array):
+        return LinkedList.getStringList(array)
 
